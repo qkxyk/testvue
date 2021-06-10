@@ -26,10 +26,16 @@
         <ol>
             <todo-item v-for="item in todos" v-bind:todo="item"></todo-item>
         </ol>
+        <br />
+        <button :disabled="isButtonDisabled">按钮是否禁用测试</button>
     </div>
-    <script>
+    <script type="module">
+        import { area, person } from "./js/circle.js";
+        // import { area, circumference } from './js/circle.js';
+
+        // console.log('圆面积：' + area(4));
         Vue.component("todo-item", {
-            props:["todo"],
+            props: ["todo"],
             template: "<li>这是一个代办事项->{{todo.text}}</li>"
         });
         var app = new Vue({
@@ -42,10 +48,70 @@
                     {
                         text: "学习js"
                     }, { text: "学习vuejs" }, { text: "学习c#" }
-                ]
+                ],
+                isButtonDisabled: true
             }
         });
 
+        /*       var obj={
+                  p:function(x){
+                      return 2*x;
+                  },
+                  foo:123
+              };
+              console.log(obj.p(2));
+              var keys = Object.keys(obj);
+              for (var key in obj) {
+                  if (obj.hasOwnProperty(key)) {
+                      console.log("key",key)
+                      console.log("value:",obj[key]);
+                  }
+              }
+               console.log(keys,keys.length); */
+
+        /*   var obj = {a:1,b:2,c:3};
+          for(var i in obj){
+              console.log("key=",i);
+              console.log("value=",obj[i]);
+          }
+          var keys = Object.keys(obj);
+          console.log(keys,keys.length); */
+        /*    var foo = function () {
+               var a = 1;
+               function bar() {
+                   console.log(a);
+               }
+               return bar;
+           }
+           var a = 2;
+           var f = foo();
+           f();
+           console.log(f.toString()); */
+        /*   var a=99;
+          f();
+          console.log(a);
+          function f(){
+              console.log(a);
+               var a=20;
+              console.log(a);
+          }
+          // f(); */
+        for (var i = 0; i < 10; i++) {
+            setTimeout(function () {
+                console.log(i);
+            }, 1);
+            console.log(i);
+        }
+        // var redius = 10;
+        //  console.log("area is", area(10));
+        //  console.log(person.name);
+        //  person.name="李四";
+        //  console.log(person);
+        // import _ from "./js/testE.js";
+        // import _ from "./js/testE.js";
+        // console.log(_.add(2,30));
+        // console.log(_.minus(2,18));
+      
     </script>
 </body>
 

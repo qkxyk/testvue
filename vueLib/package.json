@@ -1,0 +1,5 @@
+{
+    "exports":{
+        "./testE":"./js/testE.js"
+    }
+}
